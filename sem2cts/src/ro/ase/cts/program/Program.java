@@ -16,13 +16,22 @@ public class Program {
 		return listaAplicanti;
 	}
 	
+	public static void afiseazaAplicanti(List<Aplicant> listaAplicanti) {
+		for(Aplicant aplicant:listaAplicanti) {
+			
+		}
+	}
+	
+	
 
 	public static void main(String[] args) {
 		List<Aplicant> listaAplicanti;
 		try {
 			listaAplicanti = citesteAplicanti(new ReaderAngajat("angajati.txt"));
-			for(Aplicant aplicant:listaAplicanti)
+			for(Aplicant aplicant:listaAplicanti) {
 				System.out.println(aplicant.toString());
+				aplicant.afisareSumaFinantata();
+				}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
