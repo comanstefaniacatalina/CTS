@@ -11,9 +11,9 @@ import ro.ase.cts.readers.ReaderAplicanti;
 
 public class Program {
 	
-	public static List<Aplicant> citesteAplicanti(ReaderAplicanti reader) throws FileNotFoundException
+	public static List<Aplicant> citesteAplicanti(ReaderAplicanti readerAplicanti) throws FileNotFoundException
 	{
-		List<Aplicant>listaAplicanti=reader.readAplicanti();
+		List<Aplicant>listaAplicanti=readerAplicanti.readAplicanti();
 		return listaAplicanti;
 	}
 	

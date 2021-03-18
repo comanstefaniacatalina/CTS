@@ -13,27 +13,27 @@ public class ReaderElev extends ReaderAplicanti{
 	
 	public ReaderElev(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		// TODO Auto-generated method stub
-		Scanner input2 = new Scanner(new File(super.fileName));
-		input2.useDelimiter(",|\n");
-		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		Scanner fisierElevi = new Scanner(new File(super.fileName));
+		fisierElevi.useDelimiter(",|\n");
+		List<Aplicant> listaElevi = new ArrayList<Aplicant>();
+
+		while (fisierElevi.hasNext()) {
 			Elev elev = new Elev();
-		    super.citesteAplicant(input2, elev);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
+		    super.citesteAplicant(fisierElevi, elev);
+			int clasa = fisierElevi.nextInt();
+			String tutore = fisierElevi.next();
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
-			elevi.add(elev);
+			listaElevi.add(elev);
 		}
 
-		input2.close();
-		return elevi;
+		fisierElevi.close();
+		return listaElevi;
 	}
 }

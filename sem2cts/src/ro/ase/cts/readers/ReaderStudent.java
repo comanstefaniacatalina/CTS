@@ -14,27 +14,27 @@ public class ReaderStudent extends ReaderAplicanti{
 
 	public ReaderStudent(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		// TODO Auto-generated method stub
-		Scanner input = new Scanner(new File(super.fileName));
-		input.useDelimiter(",|\n");
-		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
-		while (input.hasNext()) {
+		Scanner fisierStudenti = new Scanner(new File(super.fileName));
+		fisierStudenti.useDelimiter(",|\n");
+		List<Aplicant> listaStudenti = new ArrayList<Aplicant>();
+
+		while (fisierStudenti.hasNext()) {
 			Student student= new Student();
-			super.citesteAplicant(input, student);
-			int an_studii = input.nextInt();
-			String facultate = (input.next()).toString();
-			student.setAn_studii(an_studii);
+			super.citesteAplicant(fisierStudenti, student);
+			int an_studii = fisierStudenti.nextInt();
+			String facultate = (fisierStudenti.next()).toString();
+			student.setAnStudii(an_studii);
 			student.setFacultate(facultate);
-			studenti.add(student);
+			listaStudenti.add(student);
 		}
-		input.close();
-		return studenti;
+		fisierStudenti.close();
+		return listaStudenti;
 		
 	}
 }

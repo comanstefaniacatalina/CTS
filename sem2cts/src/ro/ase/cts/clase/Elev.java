@@ -1,20 +1,12 @@
 package ro.ase.cts.clase;
 
-import java.util.Arrays;
-
 public class Elev extends Aplicant{
 	private int clasa;
 	private String tutore;
 	private static int sumaFinantata= 30;
 	
-	public int getClasa() {
-		return clasa;
-	}
 	public void setClasa(int i) {
 		this.clasa = i;
-	}
-	public String getTutore() {
-		return tutore;
 	}
 	public void setTutore(String tutore) {
 		this.tutore = tutore;
@@ -33,8 +25,8 @@ public class Elev extends Aplicant{
 	}
 	
 	public Elev(String nume, String prenume, int varsta, int punctaj,
-			int nr_proiecte, String[] denumireProiect, int clasa, String tutore) {
-		super(nume,prenume,varsta,punctaj,nr_proiecte,denumireProiect);
+			int nrProiecte, String[] denumireProiect, int clasa, String tutore) {
+		super(nume,prenume,varsta,punctaj,nrProiecte,denumireProiect);
 		this.clasa = clasa;
 		this.tutore = tutore;
 	}
@@ -42,8 +34,6 @@ public class Elev extends Aplicant{
 	
 	@Override
 	public void afisareSumaFinantata() {
-		// TODO Auto-generated method stub
-		
 		System.out.println(super.compunereStringPentruSumaFinantata(this.sumaFinantata,"Elevul"));
 		
 	}

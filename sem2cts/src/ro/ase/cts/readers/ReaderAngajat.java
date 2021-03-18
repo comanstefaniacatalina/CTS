@@ -13,27 +13,27 @@ public class ReaderAngajat extends ReaderAplicanti{
 
 	public ReaderAngajat(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public List<Aplicant> readAplicanti() throws FileNotFoundException {
-		// TODO Auto-generated method stub		
-			Scanner input2 = new Scanner(new File(super.fileName));
-			input2.useDelimiter(",");
-			List<Aplicant> angajati = new ArrayList<Aplicant>();
+				
+			Scanner fisierAngajati = new Scanner(new File(super.fileName));
+			fisierAngajati.useDelimiter(",");
+			List<Aplicant> listaAngajati = new ArrayList<Aplicant>();
 
-			while (input2.hasNext()) {
+			while (fisierAngajati.hasNext()) {
 				Angajat angajat = new Angajat();
-				super.citesteAplicant(input2,angajat);
-				int salariu = input2.nextInt();
-				String ocupatie = input2.next();
+				super.citesteAplicant(fisierAngajati,angajat);
+				int salariu = fisierAngajati.nextInt();
+				String ocupatie = fisierAngajati.next();
 				angajat.setSalariu(salariu);
 				angajat.setOcupatie(ocupatie);
-				angajati.add(angajat);
+				listaAngajati.add(angajat);
 			}
-			input2.close();
-			return angajati;
+			fisierAngajati.close();
+			return listaAngajati;
 		
 	}
 		
