@@ -47,7 +47,4 @@ public class Bilet implements Copiator {
 	};
 	
 	
-	
-	
-	
 }
