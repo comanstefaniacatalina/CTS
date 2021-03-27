@@ -10,7 +10,7 @@ public class Mijlocas extends Jucator{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Mijlocas []");
+		builder.append("Mijlocas []").append(super.toString());
 		return builder.toString();
 	}
 

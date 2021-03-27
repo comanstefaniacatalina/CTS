@@ -14,9 +14,22 @@ public class Client implements Copiator {
 	}
 	@Override
 	public Copiator copiaza() {
-		// TODO Auto-generated method stub
-		return null;
+		Client client=new Client();
+		client.nume=this.nume;
+		client.varsta=this.varsta;
+		return client;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Client [nume=");
+		builder.append(nume);
+		builder.append(", varsta=");
+		builder.append(varsta);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 	
 	
 }
