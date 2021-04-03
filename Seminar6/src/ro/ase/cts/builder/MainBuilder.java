@@ -14,6 +14,12 @@ public class MainBuilder {
 		Rezervare rezervare3=new Builder(155).setMancareInclusa(true).build();
 	
 		System.out.println(rezervare3);
+		
+		BuilderV2 builder=new BuilderV2();
+		builder.setMancareinclusa(true);
+		Rezervare r3=builder.setCodRezervare(4).build();
+		
+		System.out.println(r3);
 	}
 
 }
