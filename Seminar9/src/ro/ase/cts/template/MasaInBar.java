@@ -1,29 +1,16 @@
 package ro.ase.cts.template;
 
-public class MasaInBar extends TemplateOcupareMasa{
+public class MasaInBar extends Masa{
 
-	@Override
-	public void curataMasa() {
-		// TODO Auto-generated method stub
-		
+	public MasaInBar(int codMasa) {
+		super(codMasa);
+		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public void asazaServetele() {
-		// TODO Auto-generated method stub
-		
-	}
-
+ 
 	@Override
 	public void asazaTacamuri() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void invitaPersoane() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Pe masa "+this.codMasa+" s-au asezat paharele");
 	}
 
 }

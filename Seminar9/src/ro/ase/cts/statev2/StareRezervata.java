@@ -5,12 +5,11 @@ public class StareRezervata implements State{
 	
 	public void modificaStare(Masa masa) {
 		// TODO Auto-generated method stub
-		if(masa.getStare()instanceof StareLibera){
-			System.out.println("masa "+ masa.getCod()+"a fost rezrvata");
+		if(masa.getStare() instanceof StareLibera) {
+			System.out.println("Masa cu numarul " + masa.getCod() + " a fost rezervata.");
 			masa.setStare(this);
-		}
-		else {
-			System.out.println("msaa nu poate fi ocupata");
+		}else {
+			System.out.println("Masa nu poate fi rezervata.");
 		}
 	}
 }

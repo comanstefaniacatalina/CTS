@@ -5,10 +5,10 @@ public class StareLibera implements State {
 	@Override
 	public void modificaStare(Masa masa) {
 		if(!(masa.getStare() instanceof StareLibera)) {
-			System.out.println("masa"+masa.getCod()+" este eliberata");
+			System.out.println("Masa cu numarul "+ masa.getCod() + " este eliberata.");
 			masa.setStare(this);
 		}else {
-			System.out.println("masa nu poatefi eleiberata");
+			System.out.println("Masa nu poate fi eliberata.");
 		}
 
 	}

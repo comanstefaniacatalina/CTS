@@ -4,18 +4,18 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Restaurant r=new Restaurant("ceva", "undeva");
-		Client c1=new Client("ion");
-		Client c2=new Client("jon");
-		Client c3=new Client("bon");
+		Restaurant res = new Restaurant("Restaurant", "Str. Bucuresti");
+		Client c1 = new Client("Ion");
+		Client c2= new Client("Ioana");
+		Client c3= new Client("Mihai");
 		
-		r.adaugaObserver(c1);
-		r.adaugaObserver(c2);
+		res.adaugaObserver(c1);
+		res.adaugaObserver(c2);
+		res.realizeazaOfertaPret();
+		res.stergeObserver(c2);
+		res.adaugaObserver(c3);
 		
-		r.realizareOfertaPret();
-		r.stergeObserver(c2);
-		r.adaugaObserver(c3);
-		r.introducereMeniu();
+		res.introduceMeniu();
 	}
 
 }

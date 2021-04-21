@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant implements Observabil{
-	private List<Observer> obsList;
+	private List<Observer> observerList;
 	private String nume;
 	private String adresa;
 	
@@ -12,36 +12,36 @@ public class Restaurant implements Observabil{
 
 	public Restaurant( String nume, String adresa) {
 		super();
-		this.obsList = new ArrayList<>();
+		this.observerList = new ArrayList<>();
 		this.nume = nume;
 		this.adresa = adresa;
 	}
 
 	@Override
-	public void adaugaObserver(Observer o) {
-		// TODO Auto-generated method stub
-		this.obsList.add(o);
+	public void adaugaObserver(Observer observer) {
+		this.observerList.add(observer);
+		
 	}
 
 	@Override
-	public void stergeObserver(Observer o) {
-		// TODO Auto-generated method stub
-		this.obsList.remove(o);
+	public void stergeObserver(Observer observer) {
+		this.observerList.remove(observer);
+		
 	}
 
 	@Override
 	public void trimiteMesaj(String mesaj) {
-		for(Observer o: this.obsList) {
-			o.primesteMesaj("rest"+this.nume+" "+this.adresa+"va trimite mesa"+mesaj);
+		for(Observer observer : this.observerList) {
+			observer.primesteMesaj("Restaurantul " + this.nume + " de la adresa "+ adresa +" va transmite: "+ mesaj) ;
 		}
 	}
 	
-	public void realizareOfertaPret() {
-		trimiteMesaj(" ofera");
+	void realizeazaOfertaPret() {
+		trimiteMesaj("S-a realizat o oferta de pret.");
 	}
-	
-	public void introducereMeniu() {
-		trimiteMesaj("in meniu");
+
+	void introduceMeniu() {
+		trimiteMesaj("S-a introdu un nou meniu");
 	}
 
 }

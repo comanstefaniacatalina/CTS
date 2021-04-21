@@ -9,7 +9,7 @@ public class Main {
 		masa.elibereazaMasa();
 		masa.rezervaMasa();
 		masa.rezervaMasa();
-		masa.ridicaMasa();
+		masa.ridicaRezervare();
 		masa.elibereazaMasa();
 	}
 

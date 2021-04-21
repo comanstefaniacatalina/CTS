@@ -31,7 +31,7 @@ public class Masa {
 		
 	}
 	
-	public void ridicaMasa() {
+	public void ridicaRezervare() {
 		if(this.stare instanceof StateRezervata) {
 			System.out.println("Masa cu cod "+ cod+" e ocupata");
 			this.stare=new StateOcupata();}

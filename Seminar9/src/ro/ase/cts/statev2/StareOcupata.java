@@ -5,12 +5,11 @@ public class StareOcupata implements State{
 	@Override
 	public void modificaStare(Masa masa) {
 		// TODO Auto-generated method stub
-		if(!(masa.getStare()instanceof StareOcupata)){
-			System.out.println("masa "+ masa.getCod()+"a fost ocupata");
+		if(!(masa.getStare() instanceof StareOcupata)) {
+			System.out.println("Masa cu numarul "+ masa.getCod()+ "a fost ocupata.");
 			masa.setStare(this);
-		}
-		else {
-			System.out.println("msaa nu poate fi ocupata");
+		}else {
+			System.out.println("Masa nu poate fi ocupata.");
 		}
 	}
 
