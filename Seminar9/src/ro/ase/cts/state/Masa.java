@@ -21,6 +21,16 @@ public class Masa {
 		
 	}
 	
+	public void ocupaMasafaraRezervare() {
+		if(this.stare instanceof StateLibera) {
+			System.out.println("Masa cu cod "+ cod+" e ocupata");
+			this.stare=new StateOcupata();}
+			else {
+				System.out.println("Masa nu poate fi ocupata");
+			}
+		
+	}
+	
 	public void ridicaMasa() {
 		if(this.stare instanceof StateRezervata) {
 			System.out.println("Masa cu cod "+ cod+" e ocupata");
