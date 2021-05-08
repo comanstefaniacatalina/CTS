@@ -13,13 +13,13 @@ public class ContBancar {
 	
 	public void constituire(float sumaInitiala) {
 		this.sold=sumaInitiala;
-		System.out.println("s a constituit contul cu suma");
+		System.out.println("s a constituit contul cu suma"+sold);
 	}
 	
 	public void retragere(float suma) {
 		if(sold>=suma) {
 			sold-=suma;
-			System.out.println("s au retras");
+			System.out.println("s au retras"+suma);
 		}else {
 			System.out.println("nu sunt fonduri");
 		}
@@ -28,7 +28,7 @@ public class ContBancar {
 	
 	public void depunere(float suma) {
 		this.sold+=sold;
-		System.out.println("s a depus suma");
+		System.out.println("s a depus suma"+suma);
 	}
 	
 }
