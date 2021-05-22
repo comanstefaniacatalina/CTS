@@ -32,7 +32,7 @@ public class Student {
 	}
 
 	public void adaugaNota(int nota){
-    	if(nota>=1 && nota>10) {
+    	if(nota>=1 && nota<=10) {
         note.add(nota);
         }else {
         	throw new IllegalArgumentException();
@@ -45,7 +45,7 @@ public class Student {
 		}
 		throw new IndexOutOfBoundsException();
 		// return -1;
-		// throw new IllegalArgumentException();
+
 	}
 
 	public float calculeazaMedie() {
