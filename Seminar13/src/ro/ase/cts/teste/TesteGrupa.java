@@ -4,26 +4,31 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+import ro.ase.cts.categoriiTeste.TesteGetPromovabilitate;
+import ro.ase.cts.categoriiTeste.TesteUrgente;
 import ro.ase.cts.clase.Grupa;
 import ro.ase.cts.clase.IStudent;
 import ro.ase.cts.clase.Student;
 
-public class testeConstructorGrupa {
+public class TesteGrupa {
 
-
+	@Category(TesteUrgente.class)
 	@Test
 	public void testConstructorRight() {
 		Grupa grupa = new Grupa(1085);
 		assertEquals(1085, grupa.getNrGrupa());
 	}
 	
+	@Category(TesteUrgente.class)
 	@Test
 	public void testBoundaryLimitaInferioara() {
 		Grupa grupa = new Grupa(1000);
 		assertEquals(1000,grupa.getNrGrupa());
 	}
 	
+	@Category(TesteUrgente.class)
 	@Test
 	public void testBoundaryLimitaSuperioara() {
 		Grupa grupa = new Grupa(1100);
@@ -36,11 +41,13 @@ public class testeConstructorGrupa {
 	
 	
 	//cu fortatul de aruncat exceptii
+	@Category(TesteUrgente.class)
 	@Test(expected=IllegalArgumentException.class)
 	public void testErrorLimitaInferioara() {
 		Grupa grupa = new Grupa(100);
 	}
 	
+	@Category(TesteUrgente.class)
 	@Test(expected=IllegalArgumentException.class)
 	public void testErrorLimitaSuperioara() {
 		Grupa grupa = new Grupa(1800);
@@ -60,6 +67,7 @@ public class testeConstructorGrupa {
 	}
 	//cardinalitate 0 1 n ca nu avem, ca avem unu ca avem mai multi
 	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromovabilitateRight() {
 		Grupa grupa = new Grupa(1081);
@@ -79,6 +87,7 @@ public class testeConstructorGrupa {
 		assertEquals(0.8f, grupa.getPromovabilitate(), 0.1);
 	}
 	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromovabilitateLimitataInferioare() {
 		Grupa grupa = new Grupa(1001);
@@ -92,6 +101,8 @@ public class testeConstructorGrupa {
 		assertEquals(0, grupa.getPromovabilitate(),0.01);
 	}
 	
+	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromovabilitateLimitaSuperioara() {
 		Grupa grupa = new Grupa(1078);
@@ -104,6 +115,8 @@ public class testeConstructorGrupa {
 		assertEquals(1, grupa.getPromovabilitate(), 0.01);
 	}
 	
+	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromoInverse() {
 		int nrIntegralisti=31;
@@ -124,12 +137,16 @@ public class testeConstructorGrupa {
 		assertEquals(nrIntegralisti, grupa.getPromovabilitate()*grupa.getStudenti().size(), 0.01);
 	}
 	
+	
+	@Category(TesteGetPromovabilitate.class)
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testGetPromovabilitateErrorCondition() {
 		Grupa grupa = new Grupa(1050);
 		grupa.getPromovabilitate();
 	}
 	
+	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromovabilitateCardinalityNuAreRestante() {
 		Grupa grupa = new Grupa(1078);
@@ -140,6 +157,8 @@ public class testeConstructorGrupa {
 		assertEquals(1, grupa.getPromovabilitate(), 0.01);
 	}
 	
+	
+	@Category(TesteGetPromovabilitate.class)
 	@Test
 	public void testGetPromovabilitateCardinalityAreRestante() {
 		Grupa grupa = new Grupa(1078);
